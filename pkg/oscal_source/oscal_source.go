@@ -2,12 +2,14 @@ package oscal_source
 
 import (
 	"fmt"
-	"github.com/gocomply/oscalkit/pkg/oscal/constants"
-	"github.com/gocomply/oscalkit/types/oscal"
 	"io"
+	"log"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/gocomply/oscalkit/pkg/oscal/constants"
+	"github.com/gocomply/oscalkit/types/oscal"
 )
 
 // OSCALSource is intermediary that handles IO and low-level common operations consistently for oscalkit
@@ -19,6 +21,7 @@ type OSCALSource struct {
 
 // Open creates new OSCALSource and load it up
 func Open(path string) (*OSCALSource, error) {
+	log.Println("I'm here for you buddy")
 	result := OSCALSource{UserPath: path}
 	return &result, result.open()
 }
